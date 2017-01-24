@@ -3,7 +3,7 @@
     "@cloudelements/ramda": "0.1.x",
     "ramda-fantasy": "0.7.x"
   },
-  "description": "node.js function serialization library",
+  "description": "node.js function serialization",
   "devDependencies": {
     "ava": "0.17.x",
     "nyc": "10.x",
@@ -12,10 +12,10 @@
   "engines" : {
     "node" : ">=7.0.0"
   },
-  "homepage": "https://github.com/cloud-elements/stringfn",
+  "homepage": "https://github.com/cloud-elements/cardigan",
   "license": "UNLICENSED",
   "main": "src/index.js",
-  "name": "@cloudelements/stringfn",
+  "name": "@cloudelements/cardigan",
   "nyc": {
     "branches": 100,
     "functions": 100,
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/cloud-elements/stringfn.git"
+    "url": "git://github.com/cloud-elements/cardigan.git"
   },
   "scripts": {
     "clean": "rm -rf node_modules",
