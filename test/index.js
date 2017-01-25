@@ -42,7 +42,7 @@ test('deserialize should work with async unary arrow functions', t => {
   t.true(is(Function, deserialize(str1)));
 });
 
-test('deserialize should work with n-ary arrow functions', t => {
+test('deserialize should work with polyadic arrow functions', t => {
   const str0 = '(a, b) => a + b';
   const str1 = '(a, b) => {\n    return a + b;\n  }';
 
@@ -50,7 +50,7 @@ test('deserialize should work with n-ary arrow functions', t => {
   t.true(is(Function, deserialize(str1)));
 });
 
-test('deserialize should work with async n-ary arrow functions', t => {
+test('deserialize should work with async polyadic arrow functions', t => {
   const str0 = 'async (a, b) => a + b';
   const str1 = 'async (a, b) => {\n    return a + b;\n  }';
 
@@ -96,7 +96,7 @@ test('serialize should work with async unary arrow functions', t => {
   t.is(serialize(fn1), 'async a => {\n    return a;\n  }');
 });
 
-test('serialize should work with n-ary arrow functions', t => {
+test('serialize should work with polyadic arrow functions', t => {
   const fn0 = (a, b) => a + b;
   const fn1 = (a, b) => { return a + b; };
 
@@ -104,7 +104,7 @@ test('serialize should work with n-ary arrow functions', t => {
   t.is(serialize(fn1), '(a, b) => {\n    return a + b;\n  }');
 });
 
-test('serialize should work with async n-ary arrow functions', t => {
+test('serialize should work with async polyadic arrow functions', t => {
   const fn0 = async (a, b) => a + b;
   const fn1 = async (a, b) => { return a + b; };
 

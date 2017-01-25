@@ -10,7 +10,7 @@
 $ npm install --save @cloudelements/cardigan
 ```
 
-## Supported Functions
+## Supported Function Types
 
 ### Function Expressions
 ```javascript
@@ -32,16 +32,15 @@ a => { ... }
 async a => { ... }
 ```
 
-### N-ary Arrow Functions
+### Polyadic Arrow Functions
 ```javascript
 (a, b) => { ... }
 ```
 
-### Async N-ary Arrow Functions
+### Async Polyadic Arrow Functions
 ```javascript
 async (a, b) => { ... }
 ```
-
 
 ## Maintainers
 * Rocky Madden

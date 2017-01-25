@@ -4,7 +4,7 @@ const {allPass, anyPass, is, isNotEmpty, isNotNil, test} = require('@cloudelemen
 
 const regexFnExp = /^(async )?function \(/;
 const regexUnaryArrowFn = /^(async )?[a-zA-Z_$][a-zA-Z0-9_$]* => /;
-const regexNaryArrowFn = /^(async )?\(((, )?[a-zA-Z_$][a-zA-Z0-9_$]*)+\) => /;
+const regexPolyadicArrowFn = /^(async )?\(((, )?[a-zA-Z_$][a-zA-Z0-9_$]*)+\) => /;
 
 const validFunction = allPass([isNotNil, isNotEmpty, is(Function)]);
 const validString = allPass([isNotNil, isNotEmpty, is(String)]);
@@ -36,7 +36,7 @@ const deserialize = str => {
 const validSerialized = allPass([validString, anyPass([
   test(regexFnExp),
   test(regexUnaryArrowFn),
-  test(regexNaryArrowFn)
+  test(regexPolyadicArrowFn)
 ])]);
 
 module.exports = ({
