@@ -10,13 +10,38 @@
 $ npm install --save @cloudelements/cardigan
 ```
 
-## Stringified Function Support
-* `function (a) ...`
-* `async function (a) ...`
-* `(a, b) => ...`
-* `async (a, b) => ...`
-* `a => ...`
-* `async a => ...`
+## Supported Functions
+
+### Function Expressions
+```javascript
+function (a) { ... }
+```
+
+### Async Function Expressions
+```javascript
+async function (a) { ... }
+```
+
+### Unary Arrow Functions
+```javascript
+a => { ... }
+```
+
+### Async Unary Arrow Functions
+```javascript
+async a => { ... }
+```
+
+### N-ary Arrow Functions
+```javascript
+(a, b) => { ... }
+```
+
+### Async N-ary Arrow Functions
+```javascript
+async (a, b) => { ... }
+```
+
 
 ## Maintainers
 * Rocky Madden
