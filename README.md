@@ -10,6 +10,14 @@
 $ npm install --save @cloudelements/cardigan
 ```
 
+## Stringified Function Support
+* `function (a) ...`
+* `async function (a) ...`
+* `(a, b) => ...`
+* `async (a, b) => ...`
+* `a => ...`
+* `async a => ...`
+
 ## Maintainers
 * Rocky Madden
 * Brian Rothhaar
