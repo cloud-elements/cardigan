@@ -175,3 +175,15 @@ test('validString should return false when provided other data types', t => {
   t.false(validString(new Date()));
   t.false(validString(() => {}));
 });
+
+test('full serialization should with simple functions', t => {
+  const add2 = a => a + 2;
+
+  t.is(deserialize(serialize(add2))(3), 5);
+});
+
+test('full serialization should with curried functions', t => {
+  const add = a => b => a + b;
+
+  t.is(deserialize(serialize(add))(2)(3), 5);
+});
