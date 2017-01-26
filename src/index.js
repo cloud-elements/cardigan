@@ -8,11 +8,18 @@ const regexPolyadicArrowFn = /^(async )?\(((, )?[a-zA-Z_$][a-zA-Z0-9_$]*)+\) => 
 
 const validFunction = allPass([isNotNil, isNotEmpty, is(Function)]);
 const validString = allPass([isNotNil, isNotEmpty, is(String)]);
+const validSerialized = allPass([validString, anyPass([
+  test(regexFnExp),
+  test(regexUnaryArrowFn),
+  test(regexPolyadicArrowFn)
+])]);
+// validSerialized will always return true on a function, skip it since we can't truly test it.
+const validDeserialized = validFunction;
 
 const serialize = fn => {
   if (validString(fn)) {
     return fn;
-  } else if (validFunction(fn)) {
+  } else if (validDeserialized(fn)) {
     return fn.toString();
   } else {
     return '';
@@ -22,7 +29,7 @@ const serialize = fn => {
 const deserialize = str => {
   if (validFunction(str)) {
     return str;
-  } else if (validString(str)) {
+  } else if (validSerialized(str)) {
     if (test(regexFnExp, str)) {
       return eval(`(${str})`);
     } else {
@@ -33,17 +40,9 @@ const deserialize = str => {
   }
 };
 
-const validSerialized = allPass([validString, anyPass([
-  test(regexFnExp),
-  test(regexUnaryArrowFn),
-  test(regexPolyadicArrowFn)
-])]);
-
 module.exports = ({
   deserialize,
   serialize,
-  validDeserialized: validFunction,
-  validFunction,
-  validSerialized,
-  validString
+  validDeserialized,
+  validSerialized
 });
