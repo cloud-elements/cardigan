@@ -2,7 +2,7 @@
 
 const test = require('ava');
 const {is} = require('@cloudelements/ramda');
-const {deserialize, serialize, validFunction, validSerialized, validString} = require('../src');
+const {deserialize, serialize, validDeserialized, validSerialized} = require('../src');
 
 test('deserialize should return a Function when provided a Function', t => {
   const fn = a => a;
@@ -112,22 +112,19 @@ test('serialize should work with async polyadic arrow functions', t => {
   t.is(serialize(fn1), 'async (a, b) => {\n    return a + b;\n  }');
 });
 
-test('validFunction should return true when provided a valid Function', t => {
-  const fnExp = function () {};
+test('validDeserialized should return true when provided valid deserialization', t => {
+  const fn0 = (a, b) => a + b;
+  const fn1 = async (a, b) => { return a + b; };
 
-  t.true(validFunction(fnExp));
-  t.true(validFunction(() => {}));
+  t.true(validDeserialized(fn0));
+  t.true(validDeserialized(fn1));
 });
 
-test('validFunction should return false when provided an invalid Function', t => {
-  t.false(validFunction(undefined));
-  t.false(validFunction(null));
-});
-
-test('validFunction should return false when provided other data types', t => {
-  t.false(validFunction(2));
-  t.false(validFunction(new Date()));
-  t.false(validFunction('string'));
+test('validDeserialized should return false when provided invalid deserialization', t => {
+  t.false(validDeserialized(undefined));
+  t.false(validDeserialized(null));
+  t.false(validDeserialized(''));
+  t.false(validDeserialized(2));
 });
 
 test('validSerialized should return true when provided valid serialization', t => {
@@ -158,22 +155,7 @@ test('validSerialized should return false when provided invalid serialization', 
   t.false(validSerialized('(a, b) =>{\n    return a + b;\n  }'));
   t.false(validSerialized('async (a,b) => a + b'));
   t.false(validSerialized('async (a, b)=> {\n    return a + b;\n  }'));
-});
-
-test('validString should return true when provided a valid String', t => {
-  t.true(validString('string'));
-});
-
-test('validString should return false when provided an invalid String', t => {
-  t.false(validString(undefined));
-  t.false(validString(null));
-  t.false(validString(''));
-});
-
-test('validString should return false when provided other data types', t => {
-  t.false(validString(2));
-  t.false(validString(new Date()));
-  t.false(validString(() => {}));
+  t.false(validSerialized('curry((a,b) => a + b)'));
 });
 
 test('full serialization should work with simple functions', t => {
