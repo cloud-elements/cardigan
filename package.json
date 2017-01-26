@@ -36,7 +36,7 @@
     "test": "node --harmony node_modules/.bin/xo && node --harmony node_modules/.bin/nyc --check-coverage node --harmony node_modules/.bin/ava",
     "unit": "node --harmony node_modules/.bin/ava"
   },
-  "version": "0.0.0",
+  "version": "0.1.0",
   "xo": {
     "esnext": true,
     "rules": {

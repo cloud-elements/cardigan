@@ -1,5 +1,5 @@
 # cardigan <sub><sup>| node.js function serialization</sup></sub>
-[![version](http://img.shields.io/badge/version-0.0.0-blue.svg)](https://www.npmjs.com/package/@cloudelements/cardigan)
+[![version](http://img.shields.io/badge/version-0.1.0-blue.svg)](https://www.npmjs.com/package/@cloudelements/cardigan)
 [![versioning](http://img.shields.io/badge/versioning-semver-blue.svg)](http://semver.org/)
 [![branching](http://img.shields.io/badge/branching-github%20flow-blue.svg)](https://guides.github.com/introduction/flow/)
 [![styling](http://img.shields.io/badge/code%20styling-XO-blue.svg)](https://github.com/sindresorhus/xo)
