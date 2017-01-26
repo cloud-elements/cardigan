@@ -43,7 +43,5 @@ module.exports = ({
   deserialize,
   serialize,
   validDeserialized: validFunction,
-  validFunction,
-  validSerialized,
-  validString
+  validSerialized
 });
