@@ -3,8 +3,7 @@
     "babel": "inherit"
   },
   "dependencies": {
-    "@cloudelements/ramda": "0.1.x",
-    "ramda-fantasy": "0.7.x"
+    "@cloudelements/ramda": "0.1.x"
   },
   "description": "node.js function serialization",
   "devDependencies": {
