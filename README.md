@@ -22,7 +22,7 @@ const subtract = serialize((a, b) => a - b);
 // Do something with serialized functions (e.g. send to supporting FaaS, save to disk)
 ```
 
-> PROTIP: Functions should not reference anything outside their lexical scope.
+> __PROTIP:__ Functions should not reference anything outside their lexical scope.
 
 ### Function deserialization:
 ```javascript
