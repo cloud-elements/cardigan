@@ -10,34 +10,43 @@
 $ npm install --save @cloudelements/cardigan
 ```
 
+## Usage
+
+### Function serialization:
+```javascript
+const {serialize} = require('@cloudelements/cardigan');
+
+const add = serialize((a, b) => a + b);
+```
+
 ## Supported Function Types
 
-### Function Expressions
+### Function expressions:
 ```javascript
 function (a) { ... }
 ```
 
-### Async Function Expressions
+### Async function expressions:
 ```javascript
 async function (a) { ... }
 ```
 
-### Unary Arrow Functions
+### Unary arrow functions:
 ```javascript
 a => { ... }
 ```
 
-### Async Unary Arrow Functions
+### Async unary arrow functions:
 ```javascript
 async a => { ... }
 ```
 
-### Polyadic Arrow Functions
+### Polyadic arrow functions:
 ```javascript
 (a, b) => { ... }
 ```
 
-### Async Polyadic Arrow Functions
+### Async polyadic arrow functions:
 ```javascript
 async (a, b) => { ... }
 ```
