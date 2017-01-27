@@ -19,7 +19,7 @@ const {serialize} = require('@cloudelements/cardigan');
 const add = serialize((a, b) => a + b);
 const subtract = serialize((a, b) => a - b);
 
-// Do something with serialized functions, like send to Amadeus
+// Do something with serialized functions (e.g. send to Amadeus, save to disk)
 ```
 
 ### Function deserialization:
