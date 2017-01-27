@@ -3,7 +3,7 @@
     "babel": "inherit"
   },
   "dependencies": {
-    "@cloudelements/ramda": "0.1.x"
+    "ramda": "0.23.x"
   },
   "description": "node.js function serialization",
   "devDependencies": {
@@ -15,9 +15,9 @@
     "node" : ">=7.0.0"
   },
   "homepage": "https://github.com/cloud-elements/cardigan",
-  "license": "UNLICENSED",
+  "license": "ISC",
   "main": "src/index.js",
-  "name": "@cloudelements/cardigan",
+  "name": "cardigan",
   "nyc": {
     "branches": 100,
     "functions": 100,
