@@ -17,7 +17,7 @@
   "homepage": "https://github.com/cloud-elements/cardigan",
   "license": "ISC",
   "main": "src/index.js",
-  "name": "@cloudelements/cardigan",
+  "name": "cardigan",
   "nyc": {
     "branches": 100,
     "functions": 100,
