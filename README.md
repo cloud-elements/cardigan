@@ -68,5 +68,4 @@ async (a, b) => { ... }
 ```
 
 ## Maintainers
-* Rocky Madden
-* Brian Rothhaar
+* Rocky Madden (rocky@cloud-elements.com)
