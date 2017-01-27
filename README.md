@@ -19,10 +19,10 @@ const {serialize} = require('@cloudelements/cardigan');
 const add = serialize((a, b) => a + b);
 const subtract = serialize((a, b) => a - b);
 
-// Do something with serialized functions (e.g. send to Amadeus, save to disk)
+// Do something with serialized functions (e.g. send to supporting FaaS, save to disk)
 ```
 
-> PROTIP: Functions should not reference anything outside their lexical scope.
+> __PROTIP:__ Functions should not reference anything outside their lexical scope.
 
 ### Function deserialization:
 ```javascript
@@ -68,5 +68,4 @@ async (a, b) => { ... }
 ```
 
 ## Maintainers
-* Rocky Madden
-* Brian Rothhaar
+* Rocky Madden (rocky@cloud-elements.com)
