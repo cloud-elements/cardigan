@@ -22,6 +22,8 @@ const subtract = serialize((a, b) => a - b);
 // Do something with serialized functions (e.g. send to Amadeus, save to disk)
 ```
 
+> PROTIP: Functions should not reference anything outside their lexical scope.
+
 ### Function deserialization:
 ```javascript
 const {deserialize, serialize} = require('@cloudelements/cardigan');
