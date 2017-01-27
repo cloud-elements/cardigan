@@ -1,13 +1,13 @@
 'use strict';
 
-const {allPass, anyPass, is, isNotEmpty, isNotNil, test} = require('@cloudelements/ramda');
+const {allPass, anyPass, complement, is, isEmpty, isNil, test} = require('ramda');
 
 const regexFnExp = /^(async )?function \(/;
 const regexUnaryArrowFn = /^(async )?[a-zA-Z_$][a-zA-Z0-9_$]* => /;
 const regexPolyadicArrowFn = /^(async )?\(((, )?[a-zA-Z_$][a-zA-Z0-9_$]*)+\) => /;
 
-const validFunction = allPass([isNotNil, isNotEmpty, is(Function)]);
-const validString = allPass([isNotNil, isNotEmpty, is(String)]);
+const validFunction = allPass([complement(isNil), complement(isEmpty), is(Function)]);
+const validString = allPass([complement(isNil), complement(isEmpty), is(String)]);
 const validSerialized = allPass([validString, anyPass([
   test(regexFnExp),
   test(regexUnaryArrowFn),

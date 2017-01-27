@@ -1,7 +1,7 @@
 'use strict';
 
 const test = require('ava');
-const {is} = require('@cloudelements/ramda');
+const {is} = require('ramda');
 const {deserialize, serialize, validDeserialized, validSerialized} = require('../src');
 
 test('deserialize should return a Function when provided a Function', t => {
