@@ -22,6 +22,17 @@ const subtract = serialize((a, b) => a - b);
 // Do something with serialized functions
 ```
 
+### Function deserialization:
+```javascript
+const {deserialize, serialize} = require('@cloudelements/cardigan');
+
+const add = serialize((a, b) => a + b);
+const subtract = serialize((a, b) => a - b);
+
+const add2And3 = deserialize(add)(2, 3); // 5
+const subtract3And2 = deserialize(subtract)(3, 2); // 1
+```
+
 ## Supported Function Types
 
 ### Function expressions:
