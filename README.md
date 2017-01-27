@@ -17,6 +17,9 @@ $ npm install --save @cloudelements/cardigan
 const {serialize} = require('@cloudelements/cardigan');
 
 const add = serialize((a, b) => a + b);
+const subtract = serialize((a, b) => a - b);
+
+// Do something with serialized functions
 ```
 
 ## Supported Function Types
